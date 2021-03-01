@@ -1,0 +1,17 @@
+# action.yml
+name: 'Distrobuilder action'
+description: 'Create LXC container based on the yaml input file'
+inputs:
+  lxc-input-file:  # id of input
+    description: 'Distrobuilder recipe to build the container'
+    required: true
+    default: 'jenkins.yaml'
+    #outputs:
+    #  time: # id of output
+    #    description: 'The time we greeted you'
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - build-lxc
+    - ${{ inputs.lxc-input-file }}
