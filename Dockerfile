@@ -1,6 +1,7 @@
 FROM ubuntu:20.04 as base
 
 ENV DEBIAN_FRONTEND=noninteractive
+ENV GOBIN="/usr/local/bin"
 
 # hadolint ignore=DL3008
 RUN apt-get update && apt-get -y install --no-install-recommends build-essential \
