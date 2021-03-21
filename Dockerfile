@@ -4,7 +4,7 @@ ENV DEBIAN_FRONTEND=noninteractive
 
 # hadolint ignore=DL3008
 RUN apt-get update && apt-get -y install --no-install-recommends build-essential \
-        golang-go debootstrap rsync gpg squashfs-tools git && \
+        golang-go debootstrap rsync gpg squashfs-tools git ca-certificates && \
         apt-get clean all && rm -rf /var/lib/apt/lists/*
 
 COPY entrypoint.sh /entrypoint.sh
